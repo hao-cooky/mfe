@@ -6,7 +6,7 @@ const packageJson = require('../package.json');
 
 const DOMAIN = process.env.DOMAIN || 'http://localhost:8080';
 const prodConfig = {
-    mode: 'development',
+    mode: 'production',
     output: {
         filename: '[name].[contenthash].js',
         publicPath: '/container/lastest/'

@@ -7,5 +7,5 @@ import App from "./App";
 const mount = (element) => {
     ReactDOM.render(<App/>, element)
 }
-console.log("mounting container 2")
+console.log("mounting container 123456")
 mount(document.getElementById('root'))

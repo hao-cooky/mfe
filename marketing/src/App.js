@@ -1,21 +1,22 @@
 'use strict'
 import React from 'react'
-import {Switch, BrowserRouter, Route} from 'react-router-dom';
+import {Switch, Route, Router} from 'react-router-dom';
 import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles'
 import Landing from './components/Landing';
 import Pricing from './components/Pricing';
-const  productionClassname = createGenerateClassName({
+
+const productionClassname = createGenerateClassName({
     productionPrefix: 'marketing-'
 })
-export default () => {
+export default ({history}) => {
     return (<div>
-        <StylesProvider generateClassName={ productionClassname}>
-            <BrowserRouter>
+        <StylesProvider generateClassName={productionClassname}>
+            <Router history={history}>
                 <Switch>
                     <Route exact path="/" component={Landing}/>
                     <Route exact path="/pricing" component={Pricing}/>
                 </Switch>
-            </BrowserRouter>
+            </Router>
         </StylesProvider>
     </div>)
 }
